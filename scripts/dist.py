@@ -98,6 +98,8 @@ if __name__ == "__main__":
     for root, _, files in os.walk(SRC_DIR, topdown=True):
         if ".obsidian" in root:
             continue
+        if ".trash" in root:
+            continue
 
         for file in files:
             if file.endswith(".html"):
