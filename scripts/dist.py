@@ -12,6 +12,8 @@ os.mkdir("dist")
 
 # TODO convert obsidian metadata to json and add it to the template.
 
+# TODO nav somehow, maybe something akin to what obsidian publish itself does.
+
 def md_to_html(path: str) -> str:
     with open(path, "r", encoding="utf-8") as f:
         text = f.read()
