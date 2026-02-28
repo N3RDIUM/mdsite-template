@@ -4,22 +4,22 @@
     "type": "split",
     "children": [
       {
-        "id": "8d28019b56613adb",
+        "id": "2eb7c74bd2f10f94",
         "type": "tabs",
         "children": [
           {
-            "id": "4e934b3aa734e225",
+            "id": "5ea837fed996913c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "README.md",
+                "file": "example.md",
                 "mode": "source",
                 "source": false,
                 "backlinks": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "example"
             }
           }
         ]
@@ -197,6 +197,8 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "callout-manager:Insert Callout": false,
+      "obsidian-git:Open Git source control": false,
       "bases:Create new base": false,
       "switcher:Open quick switcher": false,
       "canvas:Create new canvas": false,
@@ -204,13 +206,14 @@
       "graph:Open graph view": false,
       "command-palette:Open command palette": false,
       "zk-prefixer:Create new unique note": false,
-      "workspaces:Manage workspace layouts": false,
-      "callout-manager:Insert Callout": false,
-      "obsidian-git:Open Git source control": false
+      "workspaces:Manage workspace layouts": false
     }
   },
-  "active": "4e934b3aa734e225",
+  "active": "5ea837fed996913c",
   "lastOpenFiles": [
+    "nothing.md",
+    "example.md",
+    "first.md",
     "_templates/unique.md",
     "_templates/presentation.md",
     "_templates/fleet.md",
@@ -236,9 +239,6 @@
     "7cln.md",
     "m1123.md",
     "Arlington.md",
-    "Voxl Rewrite.md",
-    "TODO.md",
-    "Harvard.md",
     "kanban",
     "Harvard.md~",
     "unis",
