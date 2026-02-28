@@ -18,7 +18,7 @@ Here is a wikilink to another note:
 
 Here is a piped wikilink:
 
-[[Another Note|Custom Link Text]]
+[[/|Custom Link Text]]
 
 ---
 
