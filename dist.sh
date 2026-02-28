@@ -1,5 +1,5 @@
 #!/bin/sh
 
 python -m pip install -r requirements.txt
-python -m scripts.dist
+python -m scripts.dist_include
 
