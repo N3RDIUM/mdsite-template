@@ -67,11 +67,13 @@ META_END-->
 </html>
 """
 
+SRC_DIR = "vault/"
+
 def process_md_file(root: str, file: str):
     path: str = os.path.join(root, file)
     dist_path: str = os.path.join(
         "dist/",
-        path.removeprefix("vault/").removesuffix(".md") + ".html"
+        path.removeprefix(SRC_DIR).removesuffix(".md") + ".html"
     )
     dist_dir: str = os.path.dirname(dist_path)
 
@@ -85,7 +87,7 @@ def copy_html_directly(root: str, file: str):
     path: str = os.path.join(root, file)
     dist_path: str = os.path.join(
         "dist/",
-        path.removeprefix("vault/")
+        path.removeprefix(SRC_DIR)
     )
     dist_dir: str = os.path.dirname(dist_path)
     print(f"{path} -> {dist_path}")
@@ -93,7 +95,7 @@ def copy_html_directly(root: str, file: str):
     _ = shutil.copy(path, dist_path)
 
 if __name__ == "__main__":
-    for root, _, files in os.walk("vault/", topdown=True):
+    for root, _, files in os.walk(SRC_DIR, topdown=True):
         if ".obsidian" in root:
             continue
 
@@ -103,4 +105,3 @@ if __name__ == "__main__":
             if not file.endswith(".md"):
                 continue
             process_md_file(root, file)
-
