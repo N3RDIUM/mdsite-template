@@ -83,7 +83,7 @@ def process_md_file(root: str, file: str):
     with open(dist_path, "w") as f:
         _ = f.write(apply_template(content=html))
 
-def copy_html_directly(root: str, file: str):
+def direct_copy(root: str, file: str):
     path: str = os.path.join(root, file)
     dist_path: str = os.path.join(
         "dist/",
@@ -102,8 +102,7 @@ if __name__ == "__main__":
             continue
 
         for file in files:
-            if file.endswith(".html"):
-                copy_html_directly(root, file)
             if not file.endswith(".md"):
+                direct_copy(root, file)
                 continue
             process_md_file(root, file)
