@@ -2,6 +2,7 @@
 title: Test Note
 tags: [demo, obsidian, markdown]
 created: 2026-02-28
+sitemap_invisible: 1
 ---
 
 # Test Note
