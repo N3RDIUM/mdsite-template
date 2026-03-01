@@ -39,9 +39,9 @@ DEFAULT_METADATA: dict[str, str] = {
 def apply_template(content: str, metadata: dict[str, str] = DEFAULT_METADATA) -> str:
     title = metadata.get("title", DEFAULT_METADATA["title"])
     description = metadata.get("description", DEFAULT_METADATA["description"])
-    return f"""<!--META_START
+    return f"""<!--meta start
 {json.dumps(metadata)}
-META_END-->
+meta end-->
 
 <!DOCTYPE html>
 <html lang="en">
