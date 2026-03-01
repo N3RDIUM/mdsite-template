@@ -3,16 +3,14 @@ import os
 import shutil
 import markdown
 
+from .metadata import parse_metadata
+
 if os.path.exists("./dist/"):
     shutil.rmtree("./dist/")
 os.mkdir("dist")
 
 # TODO preprocessor that transforms wikilinks to html paths
 # should intelligently handle internal links (within vault) and external ones
-
-# TODO convert obsidian metadata to json and add it to the template.
-
-# TODO nav somehow, maybe something akin to what obsidian publish itself does.
 
 def md_to_html(path: str) -> str:
     with open(path, "r", encoding="utf-8") as f:
@@ -36,9 +34,11 @@ DEFAULT_METADATA: dict[str, str] = {
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 }
 
-def apply_template(content: str, metadata: dict[str, str] = DEFAULT_METADATA) -> str:
+def apply_template(content: str) -> str:
+    metadata = parse_metadata(content)
     title = metadata.get("title", DEFAULT_METADATA["title"])
     description = metadata.get("description", DEFAULT_METADATA["description"])
+
     return f"""<!--meta start
 {json.dumps(metadata)}
 meta end-->
