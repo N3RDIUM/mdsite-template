@@ -12,12 +12,12 @@ os.mkdir("dist")
 # TODO preprocessor that transforms wikilinks to html paths
 # should intelligently handle internal links (within vault) and external ones
 
-def md_to_html(path: str) -> str:
+def md_to_html(path: str) -> tuple[str, dict]:
     with open(path, "r", encoding="utf-8") as f:
-        text = f.read()
+        md = f.read()
 
     html = markdown.markdown(
-        text,
+        md,
         extensions=[
             "extra",
             "toc",
@@ -27,15 +27,16 @@ def md_to_html(path: str) -> str:
         ]
     )
 
-    return html
+    metadata = parse_metadata(md)
+
+    return html, metadata
 
 DEFAULT_METADATA: dict[str, str] = {
     "title": "Lorem Ipsum",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
 }
 
-def apply_template(content: str) -> str:
-    metadata = parse_metadata(content)
+def apply_template(content: str, metadata: dict) -> str:
     title = metadata.get("title", DEFAULT_METADATA["title"])
     description = metadata.get("description", DEFAULT_METADATA["description"])
 
@@ -77,11 +78,11 @@ def process_md_file(root: str, file: str):
     )
     dist_dir: str = os.path.dirname(dist_path)
 
-    html: str = md_to_html(path)
+    html, metadata = md_to_html(path)
     print(f"{path} -> {dist_path}")
     os.makedirs(dist_dir, exist_ok=True)
     with open(dist_path, "w") as f:
-        _ = f.write(apply_template(content=html))
+        _ = f.write(apply_template(html, metadata))
 
 def direct_copy(root: str, file: str):
     path: str = os.path.join(root, file)
