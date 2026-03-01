@@ -56,9 +56,12 @@ meta end-->
         <!--inline start
             css:theme
             css:default
+            css:mathjax
+            js:mathjax_config
         inline end-->
         <!--autogen start-->
         <!--autogen end-->
+        <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
     </head>
     <body>
         <main class="container">
