@@ -3,7 +3,7 @@ import os
 import shutil
 import markdown
 
-from .metadata import parse_metadata
+from .metadata import parse_metadata, trim_metadata
 
 if os.path.exists("./dist/"):
     shutil.rmtree("./dist/")
@@ -17,7 +17,7 @@ def md_to_html(path: str) -> tuple[str, dict]:
         md = f.read()
 
     html = markdown.markdown(
-        md,
+        trim_metadata(md),
         extensions=[
             "extra",
             "toc",

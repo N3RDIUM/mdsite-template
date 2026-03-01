@@ -36,3 +36,10 @@ def parse_metadata(md: str) -> dict:
         return {}
 
     return _normalize_dates(data)
+
+def trim_metadata(md: str) -> str:
+    match = _FRONTMATTER_RE.match(md)
+    if match is None:
+        return md
+
+    return md[match.end():]

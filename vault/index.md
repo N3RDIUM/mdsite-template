@@ -9,8 +9,6 @@ sitemap_invisible: 1
 
 Welcome to this **Obsidian Markdown** test file.
 
----
-
 ## Internal Links
 
 Here is a wikilink to another note:
@@ -21,21 +19,15 @@ Here is a piped wikilink:
 
 [[/|Custom Link Text]]
 
----
-
 ## Embedded Image
 
-![[example-image.png]]
-
----
+![[./example.png]]
 
 ## Tasks
 
 - [x] Completed task
 - [ ] Incomplete task
 - [ ] Another task
-
----
 
 ## Table
 
@@ -44,15 +36,11 @@ Here is a piped wikilink:
 | Alice  | Developer  | Yes    |
 | Bob    | Designer   | No     |
 
----
-
 ## Callout
 
 > [!NOTE]
 > This is a callout block in Obsidian.
 > It should be styled specially in HTML.
-
----
 
 ## Code Block
 
@@ -61,13 +49,9 @@ def greet(name):
     return f"Hello, {name}!"
 ```
 
----
-
 ## Inline Code
 
 Use `print("Hello")` to display output.
-
----
 
 ## Math
 
@@ -79,22 +63,16 @@ $$
 \int_0^1 x^2 dx
 $$
 
----
-
 ## Footnote
 
 Here is a sentence with a footnote.[^1]
 
 [^1]: This is the footnote text.
 
----
-
 ## Blockquote
 
 > Markdown conversion testing  
 > should preserve formatting.
-
----
 
 ## Horizontal Rule
 
